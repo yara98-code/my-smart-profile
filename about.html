@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>About Me</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">our Smart Profile</a>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Me</a></li>
+          <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="fun.html">Fun</a></li>
+          <li class="nav-item"><a class="nav-link" href="smart.html">Smart</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="theme-toggle">
+    <button id="themeToggle">Switch to dark </button>
+  </div>
+  <div class="container">
+    <h1>About Me</h1>
+    <section class="section-box">
+      <h2>Programmer</h2>
+      <p>Hello! We are two programmers passionate about creating smart and useful web solutions.</p>
+    </section>
+    <section class="section-box">
+      <h2>Hobbies</h2>
+      <p>We are designing modern, user-friendly websites. Crafting creative layouts, experimenting with new design trends, and bringing ideas to life through code is not just our skill — it’s our favorite hobby</p>
+    </section>
+    <section class="section-box">
+      <h2>Personal Goals</h2>
+      <p>As passionate programmers and web design enthusiasts, our short-term goal is to enhance our skills in full-stack development and contribute to real-world projects. </p>
+      <div id="moreContent" style="display: none;">
+        <p>we aim to launch our own creative tech studio focused on building smart, accessible, and beautifully designed digital solutions for everyone</p>
+      </div>
+      <button id="showMoreBtn">Show More</button>
+    </section>
+  </div>
+  <script>
+    document.getElementById("showMoreBtn").addEventListener("click", function() {
+      const moreContent = document.getElementById("moreContent");
+      const isHidden = moreContent.style.display === "none" || moreContent.style.display === "";
+      moreContent.style.display = isHidden ? "block" : "none";
+      this.innerText = isHidden ? "Show Less" : "Show More";
+    });
+    document.getElementById("themeToggle").addEventListener("click", function() {
+      document.body.classList.toggle("dark-mode");
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

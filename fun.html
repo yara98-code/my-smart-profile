@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Fun Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    #funImage {
+      display: none;
+      max-width: 100%;
+      height: auto;
+      margin-top: 20px;
+    }
+
+    #funContent {
+      display: none;
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">our Smart Profile</a>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Me</a></li>
+          <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="fun.html">Fun</a></li>
+          <li class="nav-item"><a class="nav-link" href="smart.html">Smart</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container my-5">
+    <h1 class="mb-4">Welcome to the Fun Page!</h1>
+
+    <button class="btn btn-info mb-3" id="toggleTextBtn">Show/Hide Text</button>
+    <div id="funText" class="alert alert-success">
+      🎉 Surprise! You found the secret message! Keep exploring 🚀
+      This is a fun hidden message. 😄
+    </div>
+<br>
+ 
+    <button class="btn btn-warning mb-3" id="fadeImageBtn">Fade In/Out Image</button><br>
+    <img id="funImage" src="images/fun.jpg" alt="Fun Image"
+     style="width: 200px; height: 200px; object-fit: cover;"
+     class="img-fluid rounded shadow" />
+    <br>
+    <button class="btn btn-success mt-4" id="loadQuoteBtn">Load a Quote or Joke</button>
+    <div id="funContent" class="text-primary mt-3"></div>
+  </div>
+
+  <script>
+    $(document).ready(function () {
+ 
+      $('#toggleTextBtn').click(function () {
+        $('#funText').slideToggle();
+      });
+
+      $('#fadeImageBtn').click(function () {
+        $('#funImage').fadeToggle();
+      });
+      $('#loadQuoteBtn').click(function () {
+        $('#funContent').load('quote.txt', function (response, status) {
+            $('#funContent').fadeIn();
+          
+        });
+      });
+    });
+  </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
